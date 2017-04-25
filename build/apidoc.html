@@ -914,23 +914,7 @@
         });
         return checksum(file, function(err, hash){
           pkgInfo.checksum = hash; ...</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-dest: &#x27;build/&#x27;, // defaults to current directory
-binary: true, // embed node binary to use it when run the archive
-dependencies: true, // embed dependencies declared in package.json
-devDependencies: true, // the same for dev dependencies
-globalDependencies: [&#x27;npm&#x27;, &#x27;grunt-cli&#x27;] // and for globals :)
-}
-
-nar.<span class="apidocCodeKeywordSpan">create</span>(options)
-.on(&#x27;error&#x27;, function (err) {
-  throw err
-})
-.on(&#x27;info&#x27;, function (nar) {
-  console.log(nar.name)
-})
-.on(&#x27;entry&#x27;, function (file) {
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -1081,24 +1065,7 @@ onDownload, onDownloadEnd, getBinaryType, createExecutable;
           return join(options.base, &#x27;node_modules&#x27;, it);
         }).filter(function(it){
           return rootPaths.indexOf( ...</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-You can pass any configuration [options](#options) and the following options:
-
-- **path** `string` Path to package.json or application directory. Required
-- **dest** `string` Extract destination path. Default to random temporal directory
-- **file** `string` Archive file name. Default to package name + version, taken from `package.json`
-- **patterns** `array` List of glob patterns to match files to include or exclude. See [node-glob](https://github.com/isaacs/node
--glob)
-
-### nar.<span class="apidocCodeKeywordSpan">createExec</span>(options)
-
-Same as `nar.create()`, but this generate an executable binary-like archive
-
-Aditional executable options supported are:
-
-- **os** `string` Node.js OS binary platform to embed. Detault to runtime OS
-- **arch** `string` Node.js OS binary architecture to embed. Default to runtime OS arch
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -1349,23 +1316,7 @@ Aditional executable options supported are:
       var links, base, cwd, name, link, own$ = {}.hasOwnProperty;
       links = files.links;
       base = join(de ...</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-
-Aditional executable options supported are:
-
-- **os** `string` Node.js OS binary platform to embed. Detault to runtime OS
-- **arch** `string` Node.js OS binary architecture to embed. Default to runtime OS arch
-- **node** `string` Node.js version to embed. Default to the current node runtime version
-
-### nar.<span class="apidocCodeKeywordSpan">extract</span>(options)
-Fired events: `end, error, entry, archive, message, info, start`
-
-Extract archive files into an output directory
-
-##### Options
-
-- **path** `string` Path to nar archive. Required
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -1449,20 +1400,22 @@ Extract archive files into an output directory
   return emitter;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-- **headers** `object` Define aditional HTTP request headers
-- **strictSSL** `boolean` Performs HTTP request with valid SSL servers. Defaults to `false`
-- **save** `boolean` Save installed package as runtime dependency in `package.json`. Default to `false`
-- **saveDev** `boolean` Save installed package as development dependency in `package.json`. Default to `false`
-- **savePeer** `boolean` Save installed package as peer dependency in `package.json`. Default to `false`
-- **global** `boolean` Install package as global dependency. Default to `false`
-
-### nar.<span class="apidocCodeKeywordSpan">get</span>(options)
-Alias: `download`
-
-Fired events: `end, error, download, progress`
-
-Download archive from remote server.
-It supports basic HTTP authentication and proxy
+  updateBar(
+  bar)(
+  bar.total);
+  return echo(
+  &#x22;\nDownloaded in: &#x22; + it);
+};
+download = function(){
+  return nar.<span class="apidocCodeKeywordSpan">get</span>(opts).on(&#x27;download&#x27;, onDownload).on(&#x27;progress&#x27;,
+onProgress(
+  bar)).on(&#x27;error&#x27;, onError(
+  debug)).on(&#x27;end&#x27;, onEnd);
+};
+try {
+  return download();
+} catch (e$) {
+  e = e$;
 ...</pre></li>
     </ul>
 
@@ -1640,22 +1593,7 @@ It supports basic HTTP authentication and proxy
     }
     return download(
     options).on(&#x27;download&#x27;, onDownload).on(&#x27;progress&#x27;, onProgress).on(&#x27;erro ...</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-
-Read and parse a given .nar archive, emitting the `entry` event for each existent file
-
-##### Options
-
-- **path** `string` Path to nar archive. Required
-
-### nar.<span class="apidocCodeKeywordSpan">install</span>(options)
-Fired events: `end, download, downloadEnd, error, entry, start, progress`
-
-Install archive as dependency in `node_modules` directory.
-It can aditionally download the archive from remote server
-
-##### Options
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -1771,23 +1709,7 @@ It can aditionally download the archive from remote server
   parse();
   return emitter;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-
-- **path** `string` Path to nar archive. Required
-- **dest** `string` Extract destination path. Defaults to random temporal directory
-- **args** `object` Aditional argument to pass to hooks. Keys must have the same hook name
-- **hooks** `boolean` Enable/disable run command hooks. Defaults to `true`
-- **clean** `boolean` Clean app directory on exit. Defaults to `true`
-
-### nar.<span class="apidocCodeKeywordSpan">list</span>(options)
-Options: `path`
-
-Fired events: `end, error, entry`
-
-Read and parse a given .nar archive, emitting the `entry` event for each existent file
-
-##### Options
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -1936,23 +1858,7 @@ Read and parse a given .nar archive, emitting the `entry` event for each existen
   }
   return emitter;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-
-##### Options
-
-- **path** `string` Path to nar archive. Required
-- **dest** `string` Extract destination path. Default to random temporal directory
-- **tmpdir** `string` Temporal directory to use. Default to random temporal directory
-
-### nar.<span class="apidocCodeKeywordSpan">run</span>(options)
-Fired events: `end, error, entry, archive, command, info, start, stdout, stderr, exit`
-
-Read, extract and run an application. It will read [command scripts][npm-scripts] hooks in `package.json`
-
-##### Options
-
-- **path** `string` Path to nar archive. Required
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
