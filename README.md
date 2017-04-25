@@ -1,6 +1,6 @@
 # npmdoc-nar
 
-#### api documentation for  [nar (v0.3.40)](https://github.com/h2non/nar)  [![npm package](https://img.shields.io/npm/v/npmdoc-nar.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-nar) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-nar.svg)](https://travis-ci.org/npmdoc/node-npmdoc-nar)
+#### basic api documentation for  [nar (v0.3.40)](https://github.com/h2non/nar)  [![npm package](https://img.shields.io/npm/v/npmdoc-nar.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-nar) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-nar.svg)](https://travis-ci.org/npmdoc/node-npmdoc-nar)
 
 #### node.js application archive
 
